@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/obinopaul-soccer-mcp-server-badge.png)](https://mseep.ai/app/obinopaul-soccer-mcp-server)
+
 # Soccer MCP Server
 
 A Python server implementing Model Context Protocol (MCP) for football (soccer) statistics and live match data using the API-Football service.
