@@ -27,7 +27,7 @@ mcp = FastMCP(
     # host="127.0.0.1",
     # port=5000,
     # Add this to make the server more resilient
-    timeout=30  # Increase timeout to 30 seconds
+    # timeout=30  # Increase timeout to 30 seconds
 )
 
 @mcp.tool()
