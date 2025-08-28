@@ -21,14 +21,19 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-# Create an MCP server with increased timeout
+# Recupera a porta definida no ambiente (Railway) ou usa 5000 por padrão
+PORT = int(os.environ.get("PORT", 5000))
+
 mcp = FastMCP(
-    name="soccer_server",
-    # host="127.0.0.1",
-    # port=5000,
-    # Add this to make the server more resilient
-    # timeout=30  # Increase timeout to 30 seconds
+    host="0.0.0.0",
+    port=PORT,
+    signal_handlers=True,
+    # demais configurações...
 )
+
+if __name__ == "__main__":
+    print(f"Servidor MCP iniciado em 0.0.0.0:{PORT}")
+    mcp.run()
 
 @mcp.tool()
 def get_league_fixtures(league_id: int, season: int) -> Dict[str, Any]:
